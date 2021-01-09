@@ -85,7 +85,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="">Welcome</a>
+                    <a href="{{ url('/') }}">Welcome</a>
+                    <a href="{{ url('home') }}">Home</a>
                     <a href="">Edulevel</a>
                     <a href="">Program</a>
                 </div>

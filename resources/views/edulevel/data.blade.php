@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Dashboard')
+@section('title', 'Edulevel')
 
 @section('breadcrumbs')
 <div class="breadcrumbs">
@@ -15,7 +15,8 @@
         <div class="page-header float-right">
             <div class="page-title">
                 <ol class="breadcrumb text-right">
-                    <li class="active"><i class="fa fa-dashboard"></i></li>
+                    <li><a href="#">Edulevel</a></li>
+                    <li class="active">Data</li>
                 </ol>
             </div>
         </div>
@@ -26,13 +27,18 @@
 @section('content')
 <div class="content mt-3">
     <div class="animated fadeIn">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+             </div>
+        @endif
         <div class="card">
             <div class="card-header">
                 <div class="pull-left">
                     <strong>Data Jenjang</strong>
                 </div>
                 <div class="pull-right">
-                    <a href="" class="btn btn-success btn-sm">
+                    <a href="{{ url('edulevel/add') }}" class="btn btn-success btn-sm">
                         <i class="fa fa-plus"></i>Add
                     </a>
                 </div>
@@ -40,17 +46,17 @@
             <div class="card-body table-responsive">
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>No</th>
                             <th>Name</th>
-                            <th>Desc</th>
+                            <th>Description</th>
                             <th>Aksi</th>
                         </tr>  
                     </thead>
                     <tbody>
                         @foreach ($edulevel as $item)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->desc }}</td>
                                 <td class="text-center">

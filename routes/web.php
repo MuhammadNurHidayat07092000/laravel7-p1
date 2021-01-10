@@ -22,3 +22,5 @@ Route::get('home', function () {
 });
 
 Route::get('edulevel', 'EdulevelController@data');
+Route::get('edulevel/add', 'EdulevelController@add');
+Route::post('edulevel', 'EdulevelController@addProses');

@@ -16,4 +16,21 @@ class EdulevelController extends Controller
         // return view('edulevel/data', compact('edulevel'));
         return view('edulevel/data')->with('edulevel', $edulevel);
     }
+
+    public function add()
+    {
+        return view('edulevel.add');
+    }
+
+    public function addProses(Request $request)
+    {
+        DB::table('edulevel2')->insert(
+            [
+                'name' => $request->name, //match name in view
+                'desc' => $request->desc
+            ]
+        );
+
+        return redirect('edulevel')->with('status', 'Jenjang berhasil ditambahkan!');
+    }
 }

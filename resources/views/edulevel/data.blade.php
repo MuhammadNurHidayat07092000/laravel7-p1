@@ -63,9 +63,13 @@
                                     <a href="{{ url('edulevel/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                         <i class="fa fa-pencil"></i>
                                     </a>
-                                    <a href="" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-trash"></i>
-                                    </a>
+                                    <form action="{{ url('edulevel/' .$item->id) }}" method=post class="d-inline" onsubmit="return confirm('Yakin mau dihapus?')">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

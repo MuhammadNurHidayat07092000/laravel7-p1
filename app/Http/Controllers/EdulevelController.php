@@ -33,4 +33,22 @@ class EdulevelController extends Controller
 
         return redirect('edulevel')->with('status', 'Jenjang berhasil ditambahkan!');
     }
+
+    public function edit($id)
+    {
+        $edulevel = DB::table('edulevel2')->where('id', $id)->first();
+        return view('edulevel/edit', compact('edulevel'));
+    }
+
+    public function editProses(Request $request, $id)
+    {
+        DB::table('edulevel2')
+            ->where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'desc' => $request->desc
+            ]);
+
+        return redirect('edulevel')->with('status', 'Jenjang berhasil diubah!');
+    }
 }

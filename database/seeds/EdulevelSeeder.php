@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class EdulevelSeeder extends Seeder
 {
@@ -21,7 +22,6 @@ class EdulevelSeeder extends Seeder
                 'name' => 'SD 5 KOBI',
                 'desc' => 'SD yang ada di Kobi Juga',
             ]
-
         ]);
     }
 }

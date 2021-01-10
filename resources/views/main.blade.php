@@ -38,13 +38,13 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{ url('home') }}"> <i class="menu-icon fa fa-dashboard"></i>Home </a>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Jenjang </a>
+                        <a href="{{ url('edulevel') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Edulevel </a>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Program </a>
+                        <a href="{{ url('program') }}"> <i class="menu-icon fa fa-id-badge"></i>Program </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

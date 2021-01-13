@@ -24,6 +24,11 @@ class EdulevelController extends Controller
 
     public function addProses(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:2',
+            'desc' => 'required',
+        ]);
+
         DB::table('edulevel2')->insert(
             [
                 'name' => $request->name, //match name in view
@@ -42,6 +47,13 @@ class EdulevelController extends Controller
 
     public function editProses(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|min:2',
+            'desc' => 'required',
+        ], [
+            'name.required' => 'Nama jenjang tidak boleh kosong'
+        ]);
+
         DB::table('edulevel2')
             ->where('id', $id)
             ->update([

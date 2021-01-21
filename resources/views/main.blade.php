@@ -125,9 +125,10 @@
 
         </header><!-- /header -->
         <!-- Header-->
+       
         @yield('breadcrumbs')
         @yield('content')
-
+        {{-- @include('sweetalert::alert') --}}
     </div><!-- /#right-panel -->
 </body>
 </html>

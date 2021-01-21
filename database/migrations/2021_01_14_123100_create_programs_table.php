@@ -15,12 +15,18 @@ class CreateProgramsTable extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
+            // $table->bigInteger('edulevel_id')->unsigned();
+            $table->foreignId('edulevel_id')->constrained('edulevel2')->onDelete('cascade')->onUpdate('cascade');;
             $table->string('name', 100);
             $table->integer('student_price')->nullable();
             $table->tinyInteger('student_max')->nullable();
             $table->text('info')->nullable();
             $table->timestamps();
         });
+
+        // Schema::table('programs', function (Blueprint $table) {
+        //     $table->foreign('edulevel_id')->references('id')->on('edulevel2')->onDelete('cascade')->onUpdate('cascade');
+        // });
     }
 
     /**

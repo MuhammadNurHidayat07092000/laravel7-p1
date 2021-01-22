@@ -128,7 +128,7 @@
        
         @yield('breadcrumbs')
         @yield('content')
-        {{-- @include('sweetalert::alert') --}}
+        @include('sweetalert::alert')
     </div><!-- /#right-panel -->
 </body>
 </html>

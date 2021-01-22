@@ -36,7 +36,7 @@ class EdulevelController extends Controller
             ]
         );
 
-        return redirect('edulevel')->with('status', 'Jenjang berhasil ditambahkan!');
+        return redirect('edulevel')->with('toast_success', 'Data Berhasil Tersimpan!');
     }
 
     public function edit($id)
@@ -61,12 +61,12 @@ class EdulevelController extends Controller
                 'desc' => $request->desc
             ]);
 
-        return redirect('edulevel')->with('status', 'Jenjang berhasil diubah!');
+        return redirect('edulevel')->with('info', 'Data Berhasil diubah!');
     }
 
     public function delete($id)
     {
         DB::table('edulevel2')->where('id', $id)->delete();
-        return redirect('edulevel')->with('status', 'Jenjang berhasil dihapus!');
+        return redirect('edulevel')->with('warning', 'Data Berhasil dihapus!');
     }
 }

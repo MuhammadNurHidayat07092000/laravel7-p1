@@ -1,13 +1,13 @@
 @extends('main')
 
-@section('title', 'Edulevel')
+@section('title', 'program')
 
 @section('breadcrumbs')
 <div class="breadcrumbs">
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Edulevel</h1>
+                <h1>Program</h1>
             </div>
         </div>
     </div>
@@ -15,7 +15,7 @@
         <div class="page-header float-right">
             <div class="page-title">
                 <ol class="breadcrumb text-right">
-                    <li><a href="#">Edulevel</a></li>
+                    <li><a href="#">Program</a></li>
                     <li class="active">Data</li>
                 </ol>
             </div>
@@ -36,10 +36,10 @@
         <div class="card">
             <div class="card-header">
                 <div class="pull-left">
-                    <strong>Data Jenjang</strong>
+                    <strong>Data Program</strong>
                 </div>
                 <div class="pull-right">
-                    <a href="{{ url('edulevel/add') }}" class="btn btn-success btn-sm">
+                    <a href="{{ url('programs/add') }}" class="btn btn-success btn-sm">
                         <i class="fa fa-plus"></i>Add
                     </a>
                 </div>
@@ -55,16 +55,16 @@
                         </tr>  
                     </thead>
                     <tbody>
-                        @foreach ($edulevel as $item)
+                        {{-- @foreach ($programs as $item)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->desc }}</td>
                                 <td class="text-center">
-                                    <a href="{{ url('edulevel/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
+                                    <a href="{{ url('program/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                         <i class="fa fa-pencil"></i>
                                     </a>
-                                    <form action="{{ url('edulevel/' .$item->id) }}" method=post class="d-inline" onsubmit="return confirm('Yakin mau dihapus?')">
+                                    <form action="{{ url('program/' .$item->id) }}" method=post class="d-inline" onsubmit="return confirm('Yakin mau dihapus?')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger btn-sm">
@@ -73,7 +73,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        @endforeach
+                        @endforeach --}}
                     </tbody>
                 </table>
             </div>

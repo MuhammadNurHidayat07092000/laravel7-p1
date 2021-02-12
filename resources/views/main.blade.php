@@ -44,7 +44,7 @@
                         <a href="{{ url('edulevel') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Edulevel </a>
                     </li>
                     <li>
-                        <a href="{{ url('program') }}"> <i class="menu-icon fa fa-id-badge"></i>Program </a>
+                        <a href="{{ url('programs') }}"> <i class="menu-icon fa fa-id-badge"></i>Program </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

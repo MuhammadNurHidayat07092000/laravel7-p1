@@ -51,7 +51,6 @@
                             <th>No</th>
                             <th>Name Program</th>
                             <th>Edulevel</th>
-                            <th>Info</th>
                             <th>Aksi</th>
                         </tr>  
                     </thead>
@@ -61,12 +60,14 @@
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->edulevel->name }}</td>
-                                <td>{{ $item->info }}</td>
                                 <td class="text-center">
-                                    <a href="{{ url('program/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
+                                    <a href="{{ url('programs/' .$item->id) }}" class="btn btn-warning btn-sm">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <a href="{{ url('programs/edit/' .$item->id) }}" class="btn btn-primary btn-sm">
                                         <i class="fa fa-pencil"></i>
                                     </a>
-                                    <form action="{{ url('program/' .$item->id) }}" method=post class="d-inline" onsubmit="return confirm('Yakin mau dihapus?')">
+                                    <form action="{{ url('programs/' .$item->id) }}" method=post class="d-inline" onsubmit="return confirm('Yakin mau dihapus?')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger btn-sm">

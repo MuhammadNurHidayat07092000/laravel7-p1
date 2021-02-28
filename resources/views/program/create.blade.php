@@ -51,7 +51,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name">Jenjang</label>
+                                <label for="edulevel_id">Jenjang</label>
                                 <select name="edulevel_id" class="form-control @error('edulevel_id') is-invalid @enderror">
                                     <option value="">-- Pilih --</option>
                                     @foreach ($edulevel as $item)
@@ -63,21 +63,21 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name">Harga Member</label>
+                                <label for="student_price">Harga Member</label>
                                 <input type="number" name="student_price" class="form-control @error('student_price') is-invalid @enderror" value="{{ old('student_price') }}">
                                 @error('student_price')
                                     <div class="invalid-feedback">{{ $message }}</div>                        
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name">Member Maksimal</label>
+                                <label for="student_max">Member Maksimal</label>
                                 <input type="number" name="student_max" class="form-control @error('student_max') is-invalid @enderror" value="{{ old('student_max') }}">
                                 @error('student_max')
                                     <div class="invalid-feedback">{{ $message }}</div>                        
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="desc">Info</label>
+                                <label for="info">Info</label>
                                 <textarea name="info" class="form-control @error('info') is-invalid @enderror">{{ old('info') }}</textarea>
                                 @error('info')
                                     <div class="invalid-feedback">{{ $message }}</div>                        

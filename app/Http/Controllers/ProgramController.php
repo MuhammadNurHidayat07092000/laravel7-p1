@@ -47,6 +47,40 @@ class ProgramController extends Controller
             'edulevel_id.required' => 'Jenjang tidak boleh kosong'
         ]);
         // return $request;
+
+        // Cara 1
+        // $program = new Program;
+        // $program->name = $request->name;
+        // $program->edulevel_id = $request->edulevel_id;
+        // $program->student_price = $request->student_price;
+        // $program->student_max = $request->student_max;
+        // $program->info = $request->info;
+        // $program->save();
+
+        // Cara 2 :mess assignment
+        // Program::create([
+        //     'name' => $request->name,
+        //     'edulevel_id' => $request->edulevel_id,
+        //     'student_price' => $request->student_price,
+        //     'student_max' => $request->student_max,
+        //     'info' => $request->info
+        // ]);
+
+        // Cara 3 : quick mess assignment > syarat : field tabel dan name inputan harus sama
+        Program::create($request->all());
+
+        // Cara 4 : gabungan
+        // $program = new Program([
+        //     'name' => $request->name,
+        //     'edulevel_id' => $request->edulevel_id,
+        //     'student_price' => $request->student_price,
+        //     'student_max' => $request->student_max,
+        //     'info' => $request->info
+        // ]);
+        // $program->student_price = $request->student_price;
+        // $program->save();
+
+        return redirect('programs')->with('success', 'Data Berhasil Tersimpan!');
     }
 
     /**

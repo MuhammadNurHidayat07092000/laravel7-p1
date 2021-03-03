@@ -15,8 +15,10 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        // $programs = Program::all();
-        $programs = Program::with('edulevel')->get();
+        // $programs = Program::onlyTrashed()->get(); //menampilkan yang soft delete saja
+        // $programs = Program::withTrashed()->get(); //menampilkan keduanya->soft delete and non soft delete
+        $programs = Program::all();
+        // $programs = Program::with('edulevel')->get(); // menampilkan data yang deleted_atnya null
         return view('program/index', compact('programs'));
     }
 
@@ -158,13 +160,13 @@ class ProgramController extends Controller
     public function destroy(Program $program)
     {
         // Cara 1
-        // $program->delete();
+        $program->delete();
 
         // Cara 2
         // Program::destroy($program->id);
 
         // Cara 3
-        Program::where('id', $program->id)->delete();
+        // Program::where('id', $program->id)->delete();
 
         return redirect('programs')->with('warning', 'Data Berhasil Terhapus!');
     }

@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Program')
+@section('title','Program')
 
 @section('breadcrumbs')
 <div class="breadcrumbs">
@@ -39,6 +39,9 @@
                     <strong>Data Program</strong>
                 </div>
                 <div class="pull-right">
+                    <a href="{{ url('programs/trash') }}" class="btn btn-danger btn-sm">
+                        <i class="fa fa-trash"></i>Trash
+                    </a>
                     <a href="{{ url('programs/create') }}" class="btn btn-success btn-sm">
                         <i class="fa fa-plus"></i>Add
                     </a>

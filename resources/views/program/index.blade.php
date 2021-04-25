@@ -58,9 +58,9 @@
                         </tr>  
                     </thead>
                     <tbody>
-                        @foreach ($programs as $item)
+                        @foreach ($programs as $key => $item)
                             <tr>
-                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $programs->firstItem() + $key }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->edulevel->name }}</td>
                                 <td class="text-center">
@@ -82,6 +82,16 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div>
+                    Showing
+                    {{ $programs->firstItem() }}
+                    to
+                    {{ $programs->lastItem() }}
+                    entries
+                </div>
+                <div class="pull-right">
+                    {{ $programs->links() }}   
+                </div>
             </div>
         </div>
     </div><!-- .animated -->

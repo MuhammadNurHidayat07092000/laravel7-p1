@@ -17,8 +17,8 @@ class ProgramController extends Controller
     {
         // $programs = Program::onlyTrashed()->get(); //menampilkan yang soft delete saja
         // $programs = Program::withTrashed()->get(); //menampilkan keduanya->soft delete and non soft delete
-        $programs = Program::all();
-        // $programs = Program::with('edulevel')->get(); // menampilkan data yang deleted_atnya null
+        // $programs = Program::all();
+        $programs = Program::with('edulevel')->paginate(5); // menampilkan data yang deleted_atnya null
         return view('program/index', compact('programs'));
     }
 

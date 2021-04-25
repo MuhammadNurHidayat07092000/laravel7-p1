@@ -9,7 +9,7 @@ class EdulevelController extends Controller
 {
     public function data()
     {
-        $edulevel = DB::table('edulevel2')->get();
+        $edulevel = DB::table('edulevel2')->simplePaginate(5);
 
         // dd($edulevel);
         // return view('edulevel/data', ['edulevel' => $edulevel]);

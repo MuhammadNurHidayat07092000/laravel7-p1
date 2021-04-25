@@ -55,9 +55,9 @@
                         </tr>  
                     </thead>
                     <tbody>
-                        @foreach ($edulevel as $item)
+                        @foreach ($edulevel as $key => $item)
                             <tr>
-                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $edulevel-> firstItem() + $key}}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->desc }}</td>
                                 <td class="text-center">
@@ -76,6 +76,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="pull-right">
+                    {{ $edulevel->links() }}   
+                </div>
             </div>
         </div>
     </div><!-- .animated -->
